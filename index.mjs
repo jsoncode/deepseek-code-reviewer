@@ -61,7 +61,8 @@ ${diffStr}
         })
 
         console.timeEnd('ai用时：')
-        console.log('\n\n', response?.choices?.[0]?.message?.content)
+        console.log('\n\n')
+        console.log(response?.choices?.[0]?.message?.content)
     } catch (err) {
         console.error(`Error reviewing `, err)
     }
