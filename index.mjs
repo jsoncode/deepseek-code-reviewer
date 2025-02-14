@@ -38,6 +38,7 @@ ${diffStr}
 
 作为代码审查员，您的任务是：
 
+- 输出代码错误等级：error:会阻碍代码编译或运行；warning:不会阻碍代码编译或运行，但可能存在潜在问题；info:不会阻碍代码编译或运行，但可能存在改进空间。
 - 审查补丁中的代码更改（diff）并提供反馈。
 - 如果有任何错误，请突出显示它们。
 - 代码是否符合提交消息中的内容？
@@ -60,7 +61,7 @@ ${diffStr}
         })
 
         console.timeEnd('ai用时：')
-        console.log(response?.choices?.[0]?.message?.content)
+        console.log('\n\n', response?.choices?.[0]?.message?.content)
     } catch (err) {
         console.error(`Error reviewing `, err)
     }
